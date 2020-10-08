@@ -1,0 +1,41 @@
+.story-card {
+    background-image: linear-gradient(rgba(white, .6), rgba(white, .6)), url(../../img/patterns/pixel-heart.png);
+    background-size: 27rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: $shadow;
+
+    &__figure {
+        border-radius: 1.5rem;
+        overflow: hidden;
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 75% 0, 65% 10%, 35% 10%, 25% 0);
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 98%;
+            background-image: linear-gradient(rgba($primary, .6), rgba($primary, .6));
+        }
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__long {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        text-align: justify;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 15rem;
+            height: 2px;
+            margin: 2.5rem auto;
+            background-color: $primary;
+        }
+    }
+}

@@ -1,0 +1,79 @@
+.abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-center {
+    display: grid;
+    justify-content: center;
+}
+
+.text-gradient {
+    background-image: linear-gradient(to right bottom, $primary 20%, $primary-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+///////CUSTOM CHECKBOX////////////
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="checkbox"]:not(:checked)+label,
+[type="checkbox"]:checked+label {
+    position: relative;
+    font-size: 1.4rem;
+    padding-left: 2.5rem;
+    cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked)+label:before,
+[type="checkbox"]:checked+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid $primary;
+    background: #fff;
+    border-radius: 3px;
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked)+label:after,
+[type="checkbox"]:checked+label:after {
+    content: '\2713\0020';
+    position: absolute;
+    top: -2px;
+    left: 3px;
+    font-size: 1.3rem;
+    color: $primary;
+    transition: all .2s;
+    font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked)+label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+[type="checkbox"]:checked+label:after {
+    opacity: 0;
+    transform: scale(0);
+}

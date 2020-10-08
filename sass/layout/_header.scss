@@ -1,0 +1,9 @@
+.header {
+    background-image: linear-gradient(to right bottom, rgba($primary, .85),
+            rgba($primary-dark, .95)),
+        url(../../img/hero.jpg);
+    background-position: top;
+    background-size: cover;
+    height: 90vh;
+    position: relative;
+}

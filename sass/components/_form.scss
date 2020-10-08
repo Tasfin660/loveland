@@ -1,0 +1,79 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    padding: 3rem;
+    border-radius: 3px;
+    background-image: linear-gradient(rgba(white, .57), rgba(white, .57)), url(../../img/patterns/watercolor.png);
+    background-size: 38rem;
+    box-shadow: $shadow;
+
+    &__heading {
+        align-self: center;
+        font-family: Lato;
+        font-size: 4rem;
+        color: $primary;
+        letter-spacing: 2px;
+        margin-bottom: 3rem;
+    }
+
+    &__icon-field {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    &__icon {
+        position: absolute;
+        width: 1.6rem;
+        height: 1.6rem;
+        fill: #bbb;
+        left: 1rem;
+        bottom: 53%;
+        transform: translateY(50%);
+    }
+
+    &__input {
+        width: 100%;
+        font-family: inherit;
+        font-size: 1.5rem;
+        color: inherit;
+        padding: 1.4rem;
+        padding-left: 3.5rem;
+        outline: none;
+        border: 1px solid $primary;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    &__select {
+        font-family: Lato;
+        color: inherit;
+        outline: none;
+        border-color: $primary;
+        border-radius: 2px;
+        padding: .6rem;
+    }
+
+    &__terms-group {
+        margin: 2rem 0;
+    }
+
+    &__submit {
+        font-family: Lato;
+        font-weight: 300;
+        font-size: 1.9rem;
+        color: white;
+        letter-spacing: 1px;
+        background-color: $primary;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        padding: 1.25rem;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:active {
+            background-color: darken($primary, 10%);
+        }
+    }
+}

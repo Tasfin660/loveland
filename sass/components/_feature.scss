@@ -1,0 +1,253 @@
+.feature {
+
+    ///////////////////////////////
+    ////FEATURE LEFT DESIGN//////
+
+    &__heart {
+        width: 25rem;
+        height: 25rem;
+        fill: white;
+        filter: drop-shadow($shadow);
+
+        /** 1100px / 16 = 68.75em */
+        @media only screen and (max-width: 68.75em) {
+            width: 22rem;
+            height: 22rem;
+        }
+
+        /** 400px / 16 = 25em */
+        @media only screen and (max-width: 25em) {
+            width: 18rem;
+            height: 18rem;
+        }
+
+
+        &--one {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        &--two {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        &--three {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+            margin: 0 auto;
+            margin-top: -5rem;
+
+            /** 1100px / 16 = 68.75em */
+            @media only screen and (max-width: 68.75em) {
+                margin-top: -6.5rem;
+            }
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 100;
+
+        /** 400px / 16 = 25em */
+        @media only screen and (max-width: 25em) {
+            margin-top: -2rem;
+        }
+
+        &--one {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        &--two {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        &--three {
+            margin-top: -5rem;
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+
+            /** 1100px / 16 = 68.75em */
+            @media only screen and (max-width: 68.75em) {
+                margin-top: -6.5rem;
+            }
+
+            /** 400px / 16 = 25em */
+            @media only screen and (max-width: 25em) {
+                margin-top: -9rem;
+            }
+        }
+    }
+
+
+
+    &__title {
+        font-family: 'edmondsansmedium';
+        font-size: 2.5rem;
+        white-space: nowrap;
+
+        /** 1100px / 16 = 68.75em */
+        @media only screen and (max-width: 68.75em) {
+            font-size: 2.3rem;
+        }
+
+        /** 400px / 16 = 25em */
+        @media only screen and (max-width: 25em) {
+            font-size: 1.7rem;
+        }
+    }
+
+    &__long {
+        display: block;
+        width: 15rem;
+        font-size: 1.4rem;
+        line-height: 1.35;
+        text-align: center;
+        margin-top: .5rem;
+
+        /** 1100px / 16 = 68.75em */
+        @media only screen and (max-width: 68.75em) {
+            font-size: 1.3rem;
+        }
+
+        /** 400px / 16 = 25em */
+        @media only screen and (max-width: 25em) {
+            font-size: 1.1rem;
+        }
+    }
+
+    ///////////////////////////////
+    ////FEATURE RIGHT DESIGN//////
+
+    &__heading {
+        font-family: 'madinaregular';
+        font-size: 10rem;
+        color: #eee;
+        margin-bottom: 2.5rem;
+
+
+        /** 1100px / 16 = 68.75em */
+        @media only screen and (max-width: 68.75em) {
+            font-size: 8rem;
+        }
+
+        /** 500px / 16 = 31.25em */
+        @media only screen and (max-width: 31.25em) {
+            font-size: 6rem;
+        }
+    }
+
+    &__img-container {
+        display: flex;
+        margin-bottom: 4rem;
+
+        /** 500px / 16 = 31.25em */
+        @media only screen and (max-width: 31.25em) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__figure {
+        width: 23rem;
+        position: relative;
+
+        /** 1100px / 16 = 68.75em */
+        @media only screen and (max-width: 68.75em) {
+            width: 19rem;
+        }
+
+        /** 500px / 16 = 31.25em */
+        @media only screen and (max-width: 31.25em) {
+            width: 15rem;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 98%;
+            background-image: linear-gradient(rgba($primary, .6), rgba($primary, .6));
+        }
+
+        &--1 {
+            margin-right: -2rem;
+            z-index: 10;
+        }
+
+        &--2 {
+            margin-top: -1rem;
+            z-index: 20;
+
+            &::before {
+                height: 93%;
+            }
+        }
+
+        &--3 {
+            margin-left: -2rem;
+            z-index: 10;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        box-shadow: $shadow;
+    }
+}
+
+.feature-left {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 25rem);
+    grid-template-rows: repeat(2, 25rem);
+    align-items: center;
+    grid-column-gap: 3rem;
+
+    /** 1100px / 16 = 68.75em */
+    @media only screen and (max-width: 68.75em) {
+        grid-template-columns: repeat(2, 22rem);
+        grid-template-rows: repeat(2, 22rem);
+        grid-column-gap: 2rem;
+    }
+
+    /** 400px / 16 = 25em */
+    @media only screen and (max-width: 25em) {
+        grid-template-columns: repeat(2, 18rem);
+        grid-template-rows: repeat(2, 18rem);
+        grid-column-gap: 2rem;
+    }
+}
+
+.feature-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0 4rem 0;
+    height: max-content;
+    background-image: linear-gradient(15deg, rgba($primary, .85), rgba($primary, .7)), url(../../img/patterns/blue-snow.png);
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    box-shadow: $shadow;
+
+    /** 800px / 16 = 50em */
+    @media only screen and (max-width: 50em) {
+        width: max-content;
+        margin: 0 auto;
+        padding: 2rem;
+        border-radius: 5rem;
+    }
+
+    /** 500px / 16 = 31.25em */
+    @media only screen and (max-width: 31.25em) {
+        border-radius: 2rem;
+    }
+
+    /** 400px / 16 = 25em */
+    @media only screen and (max-width: 25em) {
+        border-radius: 0;
+    }
+}

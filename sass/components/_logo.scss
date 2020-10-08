@@ -1,0 +1,23 @@
+.logo {
+    font-family: 'madinaregular';
+    font-size: 5.2rem;
+    line-height: 1;
+    letter-spacing: 2.5px;
+    text-decoration: none;
+
+    /** 1000px / 16 = 62.5em */
+    @media only screen and (max-width: 62.5em) {
+        font-size: 4.5rem;
+    }
+
+    /** 700px / 16 = 43.75em */
+    @media only screen and (max-width: 43.75em) {
+        font-size: 4rem;
+    }
+
+    /** 650px / 16 = 40.625em */
+    @media only screen and (max-width: 40.625em) {
+        color: white;
+        font-size: 6rem;
+    }
+}

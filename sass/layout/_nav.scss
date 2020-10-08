@@ -1,0 +1,153 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8rem;
+    background-color: white;
+    box-shadow: $shadow;
+    position: absolute;
+    top: 8%;
+    width: 100%;
+
+    /** 650px / 16 = 40.625em */
+    @media only screen and (max-width: 40.625em) {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    /** 800px / 16 = 50em */
+    @media only screen and (max-width: 50em) {
+        padding: 0 2rem;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        list-style: none;
+
+        /** 650px / 16 = 40.625em */
+        @media only screen and (max-width: 40.625em) {
+            display: none;
+        }
+    }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-right: 4rem;
+
+            /** 1000px / 16 = 62.5em */
+            @media only screen and (max-width: 62.5em) {
+                margin-right: 3rem;
+            }
+
+            /** 700px / 16 = 43.75em */
+            @media only screen and (max-width: 43.75em) {
+                margin-right: 2.5rem;
+            }
+        }
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            display: block;
+            color: $primary;
+            font-size: 2.3rem;
+            text-decoration: none;
+            padding: 2rem 0;
+            transition: all .2s;
+
+            /** 1000px / 16 = 62.5em */
+            @media only screen and (max-width: 62.5em) {
+                font-size: 2.1rem;
+            }
+
+            /** 700px / 16 = 43.75em */
+            @media only screen and (max-width: 43.75em) {
+                font-size: 2rem;
+            }
+        }
+
+        &:hover,
+        &:active {
+            color: lighten($primary, 25%);
+        }
+    }
+
+    &__item-menu {
+        position: relative;
+    }
+
+    &__extra-list {
+        position: absolute;
+        top: 6.8rem;
+        background-color: darken(white, 2%);
+        list-style: none;
+        white-space: nowrap;
+        padding: 1.5rem;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        box-shadow: $shadow;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 100;
+        transition: all .4s ease;
+
+        /** 1000px / 16 = 62.5em */
+        @media only screen and (max-width: 62.5em) {
+            top: 6.5rem;
+        }
+    }
+
+    &__item-menu:hover &__extra-list {
+        visibility: visible;
+        height: 19rem;
+        opacity: 1;
+
+         /** 1000px / 16 = 62.5em */
+         @media only screen and (max-width: 62.5em) {
+            height: 18.5rem;
+        }
+    }
+
+    &__extra-item {
+
+        &:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            height: 1.6rem;
+            width: 1.6rem;
+            margin-right: 6px;
+
+            // Older borwsers
+            background-image: url(../../img/SVG/chevron-thin-right.svg);
+            background-size: cover;
+
+            //Newer browsers -masks
+            @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+                background-color: $primary;
+                -webkit-mask-image: url(../../img/SVG/chevron-thin-right.svg);
+                -webkit-mask-size: cover;
+                mask-image: url(../../img/SVG/chevron-thin-right.svg);
+                mask-size: cover;
+                background-image: none;
+            }
+        }
+    }
+
+    &__extra-link {
+
+        &:link,
+        &:visited {
+            padding: 0;
+            display: inline-block;
+        }
+    }
+}

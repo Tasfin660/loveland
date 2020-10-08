@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'edmondsansmedium';
+    src: url('../../fonts/edmondsans-medium-webfont.woff2') format('woff2'),
+        url('../../fonts/edmondsans-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'edmondsansregular';
+    src: url('../../fonts/edmondsans-regular-webfont.woff2') format('woff2'),
+        url('../../fonts/edmondsans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'madinaregular';
+    src: url('../../fonts/madina-webfont.woff') format('woff'),
+        url('../../fonts/madina-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: 'edmondsansregular';
+    color: #444;
+}
+
+.heading-1 {
+    top: 40% !important;
+    font-family: Lato;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+
+    &--main {
+        font-size: 8rem;
+        font-weight: 300;
+        letter-spacing: 4px;
+        display: block;
+
+        /** 800px / 16 = 50em */
+        @media only screen and (max-width: 50em) {
+            font-size: 6rem;
+        }
+
+        @include respond(phone) {
+            font-size: 4rem;
+        }
+
+        /** 450px / 16 = 28.125em */
+        @media only screen and (max-width: 28.125em) {
+            font-size: 3rem;
+        }
+
+        /** 400px / 16 = 25em */
+        @media only screen and (max-width: 25em) {
+            font-size: 2.5rem;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 20rem;
+            height: 2px;
+            margin: 3rem auto;
+            background-color: currentColor;
+
+            /** 450px / 16 = 28.125em */
+            @media only screen and (max-width: 28.125em) {
+                width: 15rem;
+            }
+
+            /** 400px / 16 = 25em */
+            @media only screen and (max-width: 25em) {
+                width: 12rem;
+            }
+        }
+    }
+
+    &--sub {
+        font-size: 2.5rem;
+        font-weight: 100;
+        letter-spacing: 2px;
+        display: block;
+
+        @include respond(phone) {
+            font-size: 2rem;
+            letter-spacing: 1.5px;
+        }
+
+        /** 450px / 16 = 28.125em */
+        @media only screen and (max-width: 28.125em) {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        /** 400px / 16 = 25em */
+        @media only screen and (max-width: 25em) {
+            font-size: 1.6rem;
+        }
+    }
+}
